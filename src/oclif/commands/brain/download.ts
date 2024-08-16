@@ -52,8 +52,7 @@ export default class DownloadBrainCommand extends AICommand {
     const opts = await this.parse(DownloadBrainCommand)
     const isJson = this.jsonEnabled()
     const {args, flags} = opts
-    const userConfig = this.loadConfig(flags.config, opts)
-    await this.config.runHook('init_tools', {id: 'brain:download', userConfig})
+    const userConfig = await this.loadConfig(flags.config, opts)
 
     process.on('SIGINT', ()=>{
       process.exit(0)

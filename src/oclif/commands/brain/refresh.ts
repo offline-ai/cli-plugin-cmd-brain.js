@@ -25,8 +25,7 @@ export default class AIBrainRefreshCommand extends AICommand {
     const opts = await this.parse(AIBrainRefreshCommand)
     const isJson = this.jsonEnabled()
     const {flags} = opts
-    const userConfig = this.loadConfig(flags.config, opts)
-    await this.config.runHook('init_tools', {id: 'brain', userConfig})
+    const userConfig = await this.loadConfig(flags.config, opts)
 
     if (userConfig.banner && !isJson) {showBanner('Refresh Brains')}
 

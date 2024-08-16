@@ -62,8 +62,7 @@ export default class Brain extends AICommand {
     const opts = await this.parse(Brain)
     const isJson = this.jsonEnabled()
     const {args, flags} = opts
-    const userConfig = this.loadConfig(flags.config, opts)
-    await this.config.runHook('init_tools', {id: 'brain', userConfig})
+    const userConfig = await this.loadConfig(flags.config, opts)
 
     if (flags.refresh) {
       const count = await upgradeBrains(flags)
