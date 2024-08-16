@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.0](https://github.com/offline-ai/cli-plugin-cmd-brain.js/compare/v0.1.2...v0.2.0) (2024-08-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* follow the cli-common to change the loadConfig as async
+
+### Refactor
+
+* follow the cli-common to change the loadConfig as async ([9f15c92](https://github.com/offline-ai/cli-plugin-cmd-brain.js/commit/9f15c92fc9bb34562290e709ecea8723aead8048))
+
 ## [0.1.2](https://github.com/offline-ai/cli-plugin-cmd-brain/compare/v0.1.1...v0.1.2) (2024-08-16)
 
 
