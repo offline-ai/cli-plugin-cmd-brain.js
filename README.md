@@ -3,7 +3,7 @@
 > 【English|[中文](./README.cn.md)】
 ---
 
-管理大脑(LLM大模型)的命令插件 For [Offline AI Client](https://npmjs.org/package/@offline-ai/cli)
+The [Offline AI Client](https://npmjs.org/package/@offline-ai/cli) Command plugin for managing the brain🧠 (LLM large model) files.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/%40offline-ai%2Fcli-plugin-cmd-brain.svg)](https://npmjs.org/package/@offline-ai/cli-plugin-cmd-brain)
@@ -34,13 +34,17 @@ ai plugin install cmd-brain
 # Commands
 
 <!-- commands -->
-* [`ai brain [NAME]`](#ai-brain-name)
-* [`ai brain dn [NAME]`](#ai-brain-dn-name)
-* [`ai brain down [NAME]`](#ai-brain-down-name)
-* [`ai brain download [NAME]`](#ai-brain-download-name)
-* [`ai brain list [NAME]`](#ai-brain-list-name)
-* [`ai brain refresh`](#ai-brain-refresh)
-* [`ai brain search [NAME]`](#ai-brain-search-name)
+- [AI Client Brain Command](#ai-client-brain-command)
+- [Quick Start](#quick-start)
+- [Install](#install)
+- [Commands](#commands)
+  - [`ai brain [NAME]`](#ai-brain-name)
+  - [`ai brain dn [NAME]`](#ai-brain-dn-name)
+  - [`ai brain down [NAME]`](#ai-brain-down-name)
+  - [`ai brain download [NAME]`](#ai-brain-download-name)
+  - [`ai brain list [NAME]`](#ai-brain-list-name)
+  - [`ai brain refresh`](#ai-brain-refresh)
+  - [`ai brain search [NAME]`](#ai-brain-search-name)
 
 ## `ai brain [NAME]`
 
