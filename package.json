@@ -61,7 +61,6 @@
     "bin": "ai",
     "dirname": "ai",
     "commands": "./dist/oclif/commands",
-    "helpClass": "./dist/oclif/lib/help",
     "hooks": {
       "register": "./dist/oclif/hooks/init-tools"
     },
