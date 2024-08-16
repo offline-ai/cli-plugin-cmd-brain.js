@@ -13,6 +13,9 @@
 
 <!-- toc -->
 * [AI Client Brain Command](#ai-client-brain-command)
+* [Quick Start](#quick-start)
+* [Install](#install)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Quick Start
@@ -31,17 +34,13 @@ ai plugin install cmd-brain
 # Commands
 
 <!-- commands -->
-- [AI Client Brain Command](#ai-client-brain-command)
-- [Quick Start](#quick-start)
-- [Install](#install)
-- [Commands](#commands)
-  - [`ai brain [NAME]`](#ai-brain-name)
-  - [`ai brain dn [NAME]`](#ai-brain-dn-name)
-  - [`ai brain down [NAME]`](#ai-brain-down-name)
-  - [`ai brain download [NAME]`](#ai-brain-download-name)
-  - [`ai brain list [NAME]`](#ai-brain-list-name)
-  - [`ai brain refresh`](#ai-brain-refresh)
-  - [`ai brain search [NAME]`](#ai-brain-search-name)
+* [`ai brain [NAME]`](#ai-brain-name)
+* [`ai brain dn [NAME]`](#ai-brain-dn-name)
+* [`ai brain down [NAME]`](#ai-brain-down-name)
+* [`ai brain download [NAME]`](#ai-brain-download-name)
+* [`ai brain list [NAME]`](#ai-brain-list-name)
+* [`ai brain refresh`](#ai-brain-refresh)
+* [`ai brain search [NAME]`](#ai-brain-search-name)
 
 ## `ai brain [NAME]`
 
