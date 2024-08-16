@@ -52,7 +52,16 @@
     "/theme.json"
   ],
   "keywords": [
-    "oclif"
+    "oclif",
+    "prompt",
+    "ai",
+    "llm",
+    "programable prompt",
+    "agent",
+    "script",
+    "plugin",
+    "command",
+    "brain"
   ],
   "license": "MIT",
   "main": "dist/index.js",
