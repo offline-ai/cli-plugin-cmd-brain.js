@@ -10,7 +10,6 @@ The [Offline AI Client](https://npmjs.org/package/@offline-ai/cli) Command plugi
 [![Downloads/week](https://img.shields.io/npm/dw/%40offline-ai%2Fcli-plugin-cmd-brain.svg)](https://npmjs.org/package/@offline-ai/cli-plugin-cmd-brain)
 
 
-
 <!-- toc -->
 * [AI Client Brain Command](#ai-client-brain-command)
 * [Quick Start](#quick-start)
@@ -27,8 +26,6 @@ Before using, you need to first install the [Offline AI Client](https://npmjs.or
 ```bash
 #If not already installed, install the client:
 npm install -g @offline-ai/cli
-#Install the plugin
-ai plugin install cmd-brain
 ```
 
 # Commands
