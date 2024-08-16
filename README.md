@@ -31,17 +31,13 @@ npm install -g @offline-ai/cli
 # Commands
 
 <!-- commands -->
-- [AI Client Brain Command](#ai-client-brain-command)
-- [Quick Start](#quick-start)
-- [Install](#install)
-- [Commands](#commands)
-  - [`ai brain [NAME]`](#ai-brain-name)
-  - [`ai brain dn [NAME]`](#ai-brain-dn-name)
-  - [`ai brain down [NAME]`](#ai-brain-down-name)
-  - [`ai brain download [NAME]`](#ai-brain-download-name)
-  - [`ai brain list [NAME]`](#ai-brain-list-name)
-  - [`ai brain refresh`](#ai-brain-refresh)
-  - [`ai brain search [NAME]`](#ai-brain-search-name)
+* [`ai brain [NAME]`](#ai-brain-name)
+* [`ai brain dn [NAME]`](#ai-brain-dn-name)
+* [`ai brain down [NAME]`](#ai-brain-down-name)
+* [`ai brain download [NAME]`](#ai-brain-download-name)
+* [`ai brain list [NAME]`](#ai-brain-list-name)
+* [`ai brain refresh`](#ai-brain-refresh)
+* [`ai brain search [NAME]`](#ai-brain-search-name)
 
 ## `ai brain [NAME]`
 
@@ -85,7 +81,7 @@ EXAMPLES
   $ ai brain download <brain-name>
 ```
 
-_See code: [src/commands/brain/index.ts](https://github.com/offline-ai/cli-plugin-cmd-brain/blob/v0.1.2/src/commands/brain/index.ts)_
+_See code: [src/commands/brain/index.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.1.2/src/commands/brain/index.ts)_
 
 ## `ai brain dn [NAME]`
 
@@ -216,7 +212,7 @@ EXAMPLES
   $ ai brain download <brain-name> [-q <QUANT>]
 ```
 
-_See code: [src/commands/brain/download.ts](https://github.com/offline-ai/cli-plugin-cmd-brain/blob/v0.1.2/src/commands/brain/download.ts)_
+_See code: [src/commands/brain/download.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.1.2/src/commands/brain/download.ts)_
 
 ## `ai brain list [NAME]`
 
@@ -249,7 +245,7 @@ ALIASES
   $ ai brain search
 ```
 
-_See code: [src/commands/brain/list.ts](https://github.com/offline-ai/cli-plugin-cmd-brain/blob/v0.1.2/src/commands/brain/list.ts)_
+_See code: [src/commands/brain/list.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.1.2/src/commands/brain/list.ts)_
 
 ## `ai brain refresh`
 
@@ -273,7 +269,7 @@ DESCRIPTION
   refresh brain index from huggingface.co
 ```
 
-_See code: [src/commands/brain/refresh.ts](https://github.com/offline-ai/cli-plugin-cmd-brain/blob/v0.1.2/src/commands/brain/refresh.ts)_
+_See code: [src/commands/brain/refresh.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.1.2/src/commands/brain/refresh.ts)_
 
 ## `ai brain search [NAME]`
 
