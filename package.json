@@ -15,7 +15,7 @@
     "@isdk/ai-tool-llm": "workspace:*",
     "@isdk/ai-tool-model": "workspace:*",
     "@isdk/ai-tool-sqlite": "workspace:*",
-    "@oclif/core": "^4.0.17",
+    "@oclif/core": "^4",
     "@offline-ai/cli-common": "workspace:*",
     "enquirer": "^2.4.1",
     "log-update": "^6.1.0"
@@ -72,10 +72,7 @@
     "commands": "./dist/oclif/commands",
     "hooks": {
       "register": "./dist/oclif/hooks/init-tools"
-    },
-    "plugins": [],
-    "theme": "theme.json",
-    "topicSeparator": " "
+    }
   },
   "scripts": {
     "build": "shx rm -rf dist && tsup",
