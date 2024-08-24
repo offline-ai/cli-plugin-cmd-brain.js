@@ -77,7 +77,7 @@ export default class Brain extends AICommand {
     if (result) { await verifyBrains(result) }
     if (!isJson) {
       if (!result || result.length === 0) {
-        this.log('No brains found')
+        this.log('No downloaded brains found')
       } else {
         printBrains(result, flags as any)
       }
