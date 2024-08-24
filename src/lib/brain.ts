@@ -14,13 +14,17 @@ export async function upgradeBrains(flags?: any) {
   const brains = ToolFunc.get(BRAINS_FUNC_NAME) as LlmModelsFunc
   let _models: AIModelSettings[]|undefined
   let shouldBreak: boolean|undefined
+  const maxCount = flags.maxCount || -1
+  let count = 0
 
   brains.on('brain:refresh', onRefresh)
   process.on('SIGINT', interrupted)
 
   try {
-    const count = await brains.$refresh(flags)
+    await brains.$refresh(flags)
     return count
+  } catch(err) {
+    console.error('🚀 ~ upgradeBrains ~ err:', err)
   } finally {
     brains.off('brain:refresh', onRefresh)
     process.off('SIGINT', interrupted)
@@ -36,7 +40,8 @@ export async function upgradeBrains(flags?: any) {
       s += ' ' + models
     }
     console.log(act, s)
-    if (shouldBreak) {this.result = true}
+    count++
+    if (shouldBreak || count >= maxCount) {this.result = true}
   }
 
   async function interrupted() {

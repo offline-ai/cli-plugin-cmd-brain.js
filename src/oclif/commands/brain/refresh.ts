@@ -18,6 +18,11 @@ export default class AIBrainRefreshCommand extends AICommand {
       aliases: ['verify-quant'],
       description: 'whether verify quant when refresh',
     }),
+    maxCount: Flags.integer({
+      char: 'c',
+      description: 'the max number of brains to refresh, -1 means no limits',
+      default: -1,
+    }),
   }
 
   async run(): Promise<any> {
