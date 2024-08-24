@@ -17,6 +17,7 @@
     "@isdk/ai-tool-sqlite": "workspace:*",
     "@oclif/core": "^4",
     "@offline-ai/cli-common": "workspace:*",
+    "date-fns": "^3.6.0",
     "enquirer": "^2.4.1",
     "log-update": "^6.1.0"
   },
