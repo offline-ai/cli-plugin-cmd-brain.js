@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.0](https://github.com/offline-ai/cli-plugin-cmd-brain.js/compare/v0.2.3...v0.3.0) (2024-08-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* change verifyQuant from defaults true to false
+
+### Features
+
+* add hint to suggestion update index for older than a week ([3259db4](https://github.com/offline-ai/cli-plugin-cmd-brain.js/commit/3259db48762602fe134202c16ff240c8fa805d5c))
+
+
+### Refactor
+
+* change verifyQuant from defaults true to false ([95ed1dc](https://github.com/offline-ai/cli-plugin-cmd-brain.js/commit/95ed1dc743e7699ea4dda3adbce940af4f72e600))
+
 ## [0.2.3](https://github.com/offline-ai/cli-plugin-cmd-brain.js/compare/v0.2.2...v0.2.3) (2024-08-24)
 
 ## [0.2.2](https://github.com/offline-ai/cli-plugin-cmd-brain.js/compare/v0.2.1...v0.2.2) (2024-08-23)
