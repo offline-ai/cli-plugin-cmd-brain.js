@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.1](https://github.com/offline-ai/cli-plugin-cmd-brain.js/compare/v0.3.0...v0.3.1) (2024-08-24)
+
 ## [0.3.0](https://github.com/offline-ai/cli-plugin-cmd-brain.js/compare/v0.2.3...v0.3.0) (2024-08-24)
 
 
