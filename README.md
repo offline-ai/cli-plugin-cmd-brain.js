@@ -253,10 +253,11 @@ _See code: [src/commands/brain/list.ts](https://github.com/offline-ai/cli-plugin
 
 ```
 USAGE
-  $ ai brain:refresh [--json] [-b <value>] [-u <value>] [-v]
+  $ ai brain:refresh [--json] [-b <value>] [-u <value>] [-v] [-c <value>]
 
 FLAGS
   -b, --brainDir=<value>  the brains(LLM) directory
+  -c, --maxCount=<value>  [default: -1] the max number of brains to refresh, -1 means no limits
   -u, --hubUrl=<value>    the hub mirror url
   -v, --verifyQuant       whether verify quant when refresh
 
