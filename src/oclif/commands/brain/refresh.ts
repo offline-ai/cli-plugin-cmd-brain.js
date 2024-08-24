@@ -17,7 +17,6 @@ export default class AIBrainRefreshCommand extends AICommand {
       char: 'v',
       aliases: ['verify-quant'],
       description: 'whether verify quant when refresh',
-      default: true,
     }),
   }
 
