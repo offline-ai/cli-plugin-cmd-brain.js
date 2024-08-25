@@ -41,7 +41,7 @@ export async function upgradeBrains(flags?: any) {
       s += ' ' + models
     }
     console.log(act, s)
-    count++
+    if (act === 'add') {count++}
     if (shouldBreak || count >= maxCount) {this.result = true}
   }
 
