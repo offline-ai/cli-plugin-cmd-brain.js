@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.4](https://github.com/offline-ai/cli-plugin-cmd-brain.js/compare/v0.3.3...v0.3.4) (2024-08-25)
+
+
+### Bug Fixes
+
+* should wait the db initData to end ([2c89acc](https://github.com/offline-ai/cli-plugin-cmd-brain.js/commit/2c89acc346507dfc2332d923da8b645793a0dd9b))
+* sould return count after error ([60b232a](https://github.com/offline-ai/cli-plugin-cmd-brain.js/commit/60b232a8111cc1217615bca846f8f848ac84b22a))
+
 ## [0.3.3](https://github.com/offline-ai/cli-plugin-cmd-brain.js/compare/v0.3.2...v0.3.3) (2024-08-24)
 
 
