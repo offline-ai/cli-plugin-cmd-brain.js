@@ -2,6 +2,7 @@ import { addDays } from "date-fns"
 import {
   ResServerTools,
   toDateTime,
+  wait,
 } from '@isdk/ai-tool'
 
 import {LlmModelsFunc } from '@isdk/ai-tool-model'
@@ -14,6 +15,12 @@ export async function initTools(this: Hook.Context, userConfig: any, _config: Co
     if (userConfig.brainDir) {
       const brainsFunc = new LlmModelsFunc(BRAINS_FUNC_NAME, {rootDir: userConfig.brainDir, dbPath: '.brainsdb'})
       ResServerTools.register(brainsFunc)
+      await wait(100)
+      let c = 10
+      while (brainsFunc.initingData && c > 0) {
+        await wait(100)
+        c--
+      }
       // brainsFunc.updateDBFromDir()
       const latestModel = brainsFunc.getLatestModel()
       if (latestModel) {
