@@ -25,6 +25,7 @@ export async function upgradeBrains(flags?: any) {
     return count
   } catch(err) {
     console.error('🚀 ~ upgradeBrains ~ err:', err)
+    return count
   } finally {
     brains.off('brain:refresh', onRefresh)
     process.off('SIGINT', interrupted)
