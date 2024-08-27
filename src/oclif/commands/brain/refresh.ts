@@ -3,9 +3,9 @@ import { showBanner, AICommand } from '@offline-ai/cli-common'
 import { upgradeBrains } from '../../../lib/brain.js'
 
 export default class AIBrainRefreshCommand extends AICommand {
-  static summary = '🔄 refresh online brains.'
+  static summary = '🔄 refresh/update online brains index.'
 
-  static description = 'refresh brain index from huggingface.co'
+  static description = 'refresh/update brain index from huggingface.co'
   static flags = {
     brainDir: Flags.directory({char: 'b', description: 'the brains(LLM) directory', exists: true}),
     hubUrl: Flags.string({

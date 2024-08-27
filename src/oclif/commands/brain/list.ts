@@ -3,10 +3,10 @@ import { parseJsJson } from '@isdk/ai-tool'
 import { showBanner, AICommand } from '@offline-ai/cli-common'
 import { Args, Flags } from '@oclif/core'
 import { listBrains, printBrains, upgradeBrains } from '../../../lib/brain.js'
+import { type ParserOutput } from '@oclif/core/interfaces'
 
 export default class AIBrainListCommand extends AICommand {
-  static summary = '📜 List downloaded or online brains, defaults to downloaded.'
-  static aliases = ['brain:search']
+  static summary = '📜 List downloaded or not downloaded brains, defaults to not downloaded.'
 
   // static description = ''
 
@@ -25,7 +25,7 @@ export default class AIBrainListCommand extends AICommand {
     }),
     all: Flags.boolean({
       char: 'a',
-      description: 'list all brains(include downloaded and online)',
+      description: 'list all brains(include downloaded)',
       default: false,
     }),
     brainDir: Flags.directory({char: 'b', description: 'the brains(LLM) directory', exists: true}),
@@ -57,8 +57,8 @@ export default class AIBrainListCommand extends AICommand {
     }),
   }
 
-  async run(): Promise<any> {
-    const opts = await this.parse(AIBrainListCommand)
+  async run(opts?: ParserOutput): Promise<any> {
+    if (!opts) {opts = await this.parse(AIBrainListCommand)}
     const isJson = this.jsonEnabled()
     const {args, flags} = opts
     const userConfig = await this.loadConfig(flags.config, opts)
