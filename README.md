@@ -216,7 +216,7 @@ _See code: [src/commands/brain/download.ts](https://github.com/offline-ai/cli-pl
 
 ## `ai brain:list [NAME]`
 
-📜 List downloaded or online brains, defaults to downloaded.
+📜 List downloaded or not downloaded brains, defaults to not downloaded.
 
 ```
 USAGE
@@ -227,7 +227,7 @@ ARGUMENTS
   NAME  the brain name to search
 
 FLAGS
-  -a, --all                list all brains(include downloaded and online)
+  -a, --all                list all brains(include downloaded)
   -b, --brainDir=<value>   the brains(LLM) directory
   -c, --config=<value>     the config file
   -d, --downloaded         list downloaded brains
@@ -240,16 +240,13 @@ FLAGS
 
 GLOBAL FLAGS
   --json  Format output as json.
-
-ALIASES
-  $ ai brain:search
 ```
 
 _See code: [src/commands/brain/list.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.6/src/commands/brain/list.ts)_
 
 ## `ai brain:refresh`
 
-🔄 refresh online brains.
+🔄 refresh/update online brains index.
 
 ```
 USAGE
@@ -265,16 +262,16 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  🔄 refresh online brains.
+  🔄 refresh/update online brains index.
 
-  refresh brain index from huggingface.co
+  refresh/update brain index from huggingface.co
 ```
 
 _See code: [src/commands/brain/refresh.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.6/src/commands/brain/refresh.ts)_
 
 ## `ai brain:search [NAME]`
 
-📜 List downloaded or online brains, defaults to downloaded.
+🔍 Search brains offline, defaults to all.
 
 ```
 USAGE
@@ -285,7 +282,7 @@ ARGUMENTS
   NAME  the brain name to search
 
 FLAGS
-  -a, --all                list all brains(include downloaded and online)
+  -a, --[no-]all           list all brains(include downloaded)
   -b, --brainDir=<value>   the brains(LLM) directory
   -c, --config=<value>     the config file
   -d, --downloaded         list downloaded brains
@@ -298,8 +295,7 @@ FLAGS
 
 GLOBAL FLAGS
   --json  Format output as json.
-
-ALIASES
-  $ ai brain:search
 ```
+
+_See code: [src/commands/brain/search.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.6/src/commands/brain/search.ts)_
 <!-- commandsstop -->
