@@ -37,7 +37,7 @@ export default class DownloadBrainCommand extends AICommand {
     }),
   }
 
-  static summary = '🧠 The AI Agent Brains(LLM) Downloader.'
+  static summary = '🧠 The AI Brains(LLM) Downloader.'
 
   static description = `
   📥 download 🧠 brains to brainDir.

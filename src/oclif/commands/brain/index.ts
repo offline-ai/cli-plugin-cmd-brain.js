@@ -41,10 +41,10 @@ export default class Brain extends AICommand {
     }),
   }
 
-  static summary = '🧠 The AI Agent Brains(LLM) Manager.'
+  static summary = '🧠 The AI Brains(LLM) Manager.'
 
   static description = `
-  Manage AI Agent brains 🧠 here.
+  Manage AI brains 🧠 here.
   📜 List downloaded or online brains
   🔎 search for brains
   📥 download brains
