@@ -41,7 +41,7 @@ npm install -g @offline-ai/cli
 
 ## `ai brain [NAME]`
 
-🧠 The AI Agent Brains(LLM) Manager.
+🧠 The AI Brains(LLM) Manager.
 
 ```
 USAGE
@@ -65,10 +65,10 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  🧠 The AI Agent Brains(LLM) Manager.
+  🧠 The AI Brains(LLM) Manager.
 
 
-  Manage AI Agent brains 🧠 here.
+  Manage AI brains 🧠 here.
   📜 List downloaded or online brains
   🔎 search for brains
   📥 download brains
@@ -85,7 +85,7 @@ _See code: [src/commands/brain/index.ts](https://github.com/offline-ai/cli-plugi
 
 ## `ai brain:dn [NAME]`
 
-🧠 The AI Agent Brains(LLM) Downloader.
+🧠 The AI Brains(LLM) Downloader.
 
 ```
 USAGE
@@ -112,7 +112,7 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  🧠 The AI Agent Brains(LLM) Downloader.
+  🧠 The AI Brains(LLM) Downloader.
 
 
   📥 download 🧠 brains to brainDir.
@@ -128,7 +128,7 @@ EXAMPLES
 
 ## `ai brain:down [NAME]`
 
-🧠 The AI Agent Brains(LLM) Downloader.
+🧠 The AI Brains(LLM) Downloader.
 
 ```
 USAGE
@@ -155,7 +155,7 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  🧠 The AI Agent Brains(LLM) Downloader.
+  🧠 The AI Brains(LLM) Downloader.
 
 
   📥 download 🧠 brains to brainDir.
@@ -171,7 +171,7 @@ EXAMPLES
 
 ## `ai brain:download [NAME]`
 
-🧠 The AI Agent Brains(LLM) Downloader.
+🧠 The AI Brains(LLM) Downloader.
 
 ```
 USAGE
@@ -198,7 +198,7 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  🧠 The AI Agent Brains(LLM) Downloader.
+  🧠 The AI Brains(LLM) Downloader.
 
 
   📥 download 🧠 brains to brainDir.
