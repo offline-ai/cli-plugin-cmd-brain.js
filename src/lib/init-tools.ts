@@ -15,12 +15,7 @@ export async function initTools(this: Hook.Context, userConfig: any, _config: Co
     if (userConfig.brainDir) {
       const brainsFunc = new LlmModelsFunc(BRAINS_FUNC_NAME, {rootDir: userConfig.brainDir, dbPath: '.brainsdb'})
       ResServerTools.register(brainsFunc)
-      await wait(100)
-      let c = 10
-      while (brainsFunc.initingData && c > 0) {
-        await wait(100)
-        c--
-      }
+      await brainsFunc.initData()
       // brainsFunc.updateDBFromDir()
       const latestModel = brainsFunc.getLatestModel()
       if (latestModel) {
