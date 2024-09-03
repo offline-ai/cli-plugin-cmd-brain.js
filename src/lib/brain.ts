@@ -40,9 +40,9 @@ export async function upgradeBrains(flags?: any) {
     } else if(models && typeof models === 'string') {
       s += ' ' + models
     }
-    console.log(act, s)
+    console.log(act, s, model.updatedAt)
     if (act === 'add') {count++}
-    if (shouldBreak || count >= maxCount) {this.result = true}
+    if (shouldBreak || (maxCount > 0 && count >= maxCount)) {this.result = true}
   }
 
   async function interrupted() {
