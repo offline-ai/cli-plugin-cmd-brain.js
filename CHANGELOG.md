@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.12](https://github.com/offline-ai/cli-plugin-cmd-brain.js/compare/v0.3.11...v0.3.12) (2024-09-16)
+
+
+### Bug Fixes
+
+* can not refresh if no maxCount option ([191dda0](https://github.com/offline-ai/cli-plugin-cmd-brain.js/commit/191dda07c8b6f755dfc0b4b3fdb31b09724c65a7))
+
+
+### Refactor
+
+* follow up stream changed ([6912143](https://github.com/offline-ai/cli-plugin-cmd-brain.js/commit/69121430622050d8ab3b9956f9517afd45ced7eb))
+
 ## [0.3.11](https://github.com/offline-ai/cli-plugin-cmd-brain.js/compare/v0.3.10...v0.3.11) (2024-09-02)
 
 ## [0.3.10](https://github.com/offline-ai/cli-plugin-cmd-brain.js/compare/v0.3.9...v0.3.10) (2024-09-02)
