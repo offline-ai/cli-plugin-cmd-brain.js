@@ -81,7 +81,7 @@ EXAMPLES
   $ ai brain download <brain-name>
 ```
 
-_See code: [src/commands/brain/index.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.11/src/commands/brain/index.ts)_
+_See code: [src/commands/brain/index.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.12/src/commands/brain/index.ts)_
 
 ## `ai brain:dn [NAME]`
 
@@ -212,7 +212,7 @@ EXAMPLES
   $ ai brain:download <brain-name> [-q <QUANT>]
 ```
 
-_See code: [src/commands/brain/download.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.11/src/commands/brain/download.ts)_
+_See code: [src/commands/brain/download.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.12/src/commands/brain/download.ts)_
 
 ## `ai brain:list [NAME]`
 
@@ -242,7 +242,7 @@ GLOBAL FLAGS
   --json  Format output as json.
 ```
 
-_See code: [src/commands/brain/list.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.11/src/commands/brain/list.ts)_
+_See code: [src/commands/brain/list.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.12/src/commands/brain/list.ts)_
 
 ## `ai brain:refresh`
 
@@ -267,7 +267,7 @@ DESCRIPTION
   refresh/update brain index from huggingface.co
 ```
 
-_See code: [src/commands/brain/refresh.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.11/src/commands/brain/refresh.ts)_
+_See code: [src/commands/brain/refresh.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.12/src/commands/brain/refresh.ts)_
 
 ## `ai brain:search [NAME]`
 
@@ -297,5 +297,5 @@ GLOBAL FLAGS
   --json  Format output as json.
 ```
 
-_See code: [src/commands/brain/search.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.11/src/commands/brain/search.ts)_
+_See code: [src/commands/brain/search.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.12/src/commands/brain/search.ts)_
 <!-- commandsstop -->
