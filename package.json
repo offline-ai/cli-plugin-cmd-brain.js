@@ -1,7 +1,7 @@
 {
   "name": "@offline-ai/cli-plugin-cmd-brain",
   "description": "Offline(local) AI Client Command to manage brains",
-  "version": "0.3.17",
+  "version": "0.3.18",
   "author": "Riceball LEE <snowyu.lee@gmail.com>",
   "bin": {
     "ai": "./bin/run.js"
