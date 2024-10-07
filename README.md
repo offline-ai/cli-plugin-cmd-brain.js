@@ -45,21 +45,21 @@ npm install -g @offline-ai/cli
 
 ```
 USAGE
-  $ ai brain [NAME] [--json] [-c <value>] [--banner] [-b <value>] [-s <value>] [-n <value>] [-u <value> -r]
-    [-v ]
+  $ ai brain [NAME] [--json] [--config <value>] [--banner] [-b <value>] [-s <value>] [-n <value>] [-u
+    <value> -r] [-v ]
 
 ARGUMENTS
   NAME  the brain name to search
 
 FLAGS
   -b, --brainDir=<value>  the brains(LLM) directory
-  -c, --config=<value>    the config file
   -n, --count=<value>     [default: 100] the max number of brains to list, 0 means all.
   -r, --refresh           refresh the online brains list
   -s, --search=<value>    the json filter to search for brains
   -u, --hubUrl=<value>    the hub mirror url
   -v, --verifyQuant       whether verify quant when refresh
       --[no-]banner       show banner
+      --config=<value>    the config file
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -81,7 +81,7 @@ EXAMPLES
   $ ai brain download <brain-name>
 ```
 
-_See code: [src/commands/brain/index.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.20/src/commands/brain/index.ts)_
+_See code: [src/commands/brain/index.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.21/src/commands/brain/index.ts)_
 
 ## `ai brain:dn [NAME]`
 
@@ -89,7 +89,7 @@ _See code: [src/commands/brain/index.ts](https://github.com/offline-ai/cli-plugi
 
 ```
 USAGE
-  $ ai brain:dn [NAME] [--json] [-c <value>] [--banner] [-b <value>] [-q
+  $ ai brain:dn [NAME] [--json] [--config <value>] [--banner] [-b <value>] [-q
     F32|F16|Q4_0|Q4_1|Q4_1_SOME_F16|Q8_0|Q5_0|Q5_1|Q2_K|Q3_K_S|Q3_K_M|Q3_K_L|Q4_K_S|Q4_K_M|Q5_K_S|Q5_K_M|Q6_K|IQ2_XXS|IQ
     2_XS|Q2_K_S|IQ3_XS|IQ3_XXS|IQ1_S|IQ4_NL|IQ3_S|IQ3_M|IQ2_S|IQ2_M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED
     ] [-u <value>] [-d]
@@ -99,7 +99,6 @@ ARGUMENTS
 
 FLAGS
   -b, --brainDir=<value>  the brains(LLM) directory
-  -c, --config=<value>    the config file
   -d, --dryRun            dry run, do not download
   -q, --quant=<option>    the quantization of the model, defaults to 4bit
                           <options: F32|F16|Q4_0|Q4_1|Q4_1_SOME_F16|Q8_0|Q5_0|Q5_1|Q2_K|Q3_K_S|Q3_K_M|Q3_K_L|Q4_K_S|Q4_K
@@ -107,6 +106,7 @@ FLAGS
                           M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED>
   -u, --hubUrl=<value>    the hub mirror url
       --[no-]banner       show banner
+      --config=<value>    the config file
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -132,7 +132,7 @@ EXAMPLES
 
 ```
 USAGE
-  $ ai brain:down [NAME] [--json] [-c <value>] [--banner] [-b <value>] [-q
+  $ ai brain:down [NAME] [--json] [--config <value>] [--banner] [-b <value>] [-q
     F32|F16|Q4_0|Q4_1|Q4_1_SOME_F16|Q8_0|Q5_0|Q5_1|Q2_K|Q3_K_S|Q3_K_M|Q3_K_L|Q4_K_S|Q4_K_M|Q5_K_S|Q5_K_M|Q6_K|IQ2_XXS|IQ
     2_XS|Q2_K_S|IQ3_XS|IQ3_XXS|IQ1_S|IQ4_NL|IQ3_S|IQ3_M|IQ2_S|IQ2_M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED
     ] [-u <value>] [-d]
@@ -142,7 +142,6 @@ ARGUMENTS
 
 FLAGS
   -b, --brainDir=<value>  the brains(LLM) directory
-  -c, --config=<value>    the config file
   -d, --dryRun            dry run, do not download
   -q, --quant=<option>    the quantization of the model, defaults to 4bit
                           <options: F32|F16|Q4_0|Q4_1|Q4_1_SOME_F16|Q8_0|Q5_0|Q5_1|Q2_K|Q3_K_S|Q3_K_M|Q3_K_L|Q4_K_S|Q4_K
@@ -150,6 +149,7 @@ FLAGS
                           M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED>
   -u, --hubUrl=<value>    the hub mirror url
       --[no-]banner       show banner
+      --config=<value>    the config file
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -175,7 +175,7 @@ EXAMPLES
 
 ```
 USAGE
-  $ ai brain:download [NAME] [--json] [-c <value>] [--banner] [-b <value>] [-q
+  $ ai brain:download [NAME] [--json] [--config <value>] [--banner] [-b <value>] [-q
     F32|F16|Q4_0|Q4_1|Q4_1_SOME_F16|Q8_0|Q5_0|Q5_1|Q2_K|Q3_K_S|Q3_K_M|Q3_K_L|Q4_K_S|Q4_K_M|Q5_K_S|Q5_K_M|Q6_K|IQ2_XXS|IQ
     2_XS|Q2_K_S|IQ3_XS|IQ3_XXS|IQ1_S|IQ4_NL|IQ3_S|IQ3_M|IQ2_S|IQ2_M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED
     ] [-u <value>] [-d]
@@ -185,7 +185,6 @@ ARGUMENTS
 
 FLAGS
   -b, --brainDir=<value>  the brains(LLM) directory
-  -c, --config=<value>    the config file
   -d, --dryRun            dry run, do not download
   -q, --quant=<option>    the quantization of the model, defaults to 4bit
                           <options: F32|F16|Q4_0|Q4_1|Q4_1_SOME_F16|Q8_0|Q5_0|Q5_1|Q2_K|Q3_K_S|Q3_K_M|Q3_K_L|Q4_K_S|Q4_K
@@ -193,6 +192,7 @@ FLAGS
                           M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED>
   -u, --hubUrl=<value>    the hub mirror url
       --[no-]banner       show banner
+      --config=<value>    the config file
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -212,7 +212,7 @@ EXAMPLES
   $ ai brain:download <brain-name> [-q <QUANT>]
 ```
 
-_See code: [src/commands/brain/download.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.20/src/commands/brain/download.ts)_
+_See code: [src/commands/brain/download.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.21/src/commands/brain/download.ts)_
 
 ## `ai brain:list [NAME]`
 
@@ -220,8 +220,8 @@ _See code: [src/commands/brain/download.ts](https://github.com/offline-ai/cli-pl
 
 ```
 USAGE
-  $ ai brain:list [NAME] [--json] [-c <value>] [--banner] [-d] [-a] [-b <value>] [-f] [-s <value>] [-n <value>]
-    [-u <value> -r]
+  $ ai brain:list [NAME] [--json] [--config <value>] [--banner] [-d] [-a] [-b <value>] [-f] [-s <value>] [-n
+    <value>] [-u <value> -r]
 
 ARGUMENTS
   NAME  the brain name to search
@@ -229,7 +229,6 @@ ARGUMENTS
 FLAGS
   -a, --all                list all brains(include downloaded)
   -b, --brainDir=<value>   the brains(LLM) directory
-  -c, --config=<value>     the config file
   -d, --downloaded         list downloaded brains
   -f, --[no-]onlyFeatured  only list featured brains
   -n, --count=<value>      [default: 100] the max number of brains to list, 0 means all.
@@ -237,12 +236,13 @@ FLAGS
   -s, --search=<value>     the json filter to search for brains
   -u, --hubUrl=<value>     the hub mirror url
       --[no-]banner        show banner
+      --config=<value>     the config file
 
 GLOBAL FLAGS
   --json  Format output as json.
 ```
 
-_See code: [src/commands/brain/list.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.20/src/commands/brain/list.ts)_
+_See code: [src/commands/brain/list.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.21/src/commands/brain/list.ts)_
 
 ## `ai brain:refresh`
 
@@ -267,7 +267,7 @@ DESCRIPTION
   refresh/update brain index from huggingface.co
 ```
 
-_See code: [src/commands/brain/refresh.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.20/src/commands/brain/refresh.ts)_
+_See code: [src/commands/brain/refresh.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.21/src/commands/brain/refresh.ts)_
 
 ## `ai brain:search [NAME]`
 
@@ -275,8 +275,8 @@ _See code: [src/commands/brain/refresh.ts](https://github.com/offline-ai/cli-plu
 
 ```
 USAGE
-  $ ai brain:search [NAME] [--json] [-c <value>] [--banner] [-d] [-a] [-b <value>] [-f] [-s <value>] [-n <value>]
-    [-u <value> -r]
+  $ ai brain:search [NAME] [--json] [--config <value>] [--banner] [-d] [-a] [-b <value>] [-f] [-s <value>] [-n
+    <value>] [-u <value> -r]
 
 ARGUMENTS
   NAME  the brain name to search
@@ -284,7 +284,6 @@ ARGUMENTS
 FLAGS
   -a, --[no-]all           list all brains(include downloaded)
   -b, --brainDir=<value>   the brains(LLM) directory
-  -c, --config=<value>     the config file
   -d, --downloaded         list downloaded brains
   -f, --[no-]onlyFeatured  only list featured brains
   -n, --count=<value>      [default: 100] the max number of brains to list, 0 means all.
@@ -292,10 +291,11 @@ FLAGS
   -s, --search=<value>     the json filter to search for brains
   -u, --hubUrl=<value>     the hub mirror url
       --[no-]banner        show banner
+      --config=<value>     the config file
 
 GLOBAL FLAGS
   --json  Format output as json.
 ```
 
-_See code: [src/commands/brain/search.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.20/src/commands/brain/search.ts)_
+_See code: [src/commands/brain/search.ts](https://github.com/offline-ai/cli-plugin-cmd-brain.js/blob/v0.3.21/src/commands/brain/search.ts)_
 <!-- commandsstop -->
