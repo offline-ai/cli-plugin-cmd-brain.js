@@ -16,7 +16,7 @@ export default class Brain extends AICommand {
     search: Flags.string({
       char: 's',
       description: 'the json filter to search for brains',
-      parse: (input: string) => parseJsJson(input),
+      parse: async (input: string) => await parseJsJson(input),
     }),
     count: Flags.integer({
       char: 'n',
