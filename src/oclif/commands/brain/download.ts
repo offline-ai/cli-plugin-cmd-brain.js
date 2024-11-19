@@ -2,7 +2,7 @@ import path from 'path'
 import enquier from 'enquirer'
 import { Args, Flags } from '@oclif/core'
 import { showBanner, AICommand } from '@offline-ai/cli-common'
-import { downloadBrain, getQuantsFromBrain, listBrains } from '../../../lib/brain.js'
+import { downloadBrain, getQuantsFromBrain, listBrains, updateBrain } from '../../../lib/brain.js'
 import { AIModelQuantType } from '@isdk/ai-tool-llm'
 import logUpdate from 'log-update'
 
@@ -34,6 +34,10 @@ export default class DownloadBrainCommand extends AICommand {
       char: 'd',
       aliases: ['dry-run'],
       description: 'dry run, do not download',
+    }),
+    refresh: Flags.boolean({
+      char: 'r',
+      description: 'refresh the specified brain',
     }),
   }
 
@@ -94,10 +98,17 @@ export default class DownloadBrainCommand extends AICommand {
       brain = brain[0]
     }
 
-    const quants = getQuantsFromBrain(brain)
+    let quants = getQuantsFromBrain(brain)
     if (flags.quant && !quants.includes(flags.quant)) {
-      this.log(`Your chosen brain has no such quantization level: ${flags.quant}`)
-      flags.quant = undefined
+      if (flags.refresh) {
+        this.log('Refreshing the brain...', brain._id)
+        brain = await updateBrain(brain._id, flags)
+        quants = getQuantsFromBrain(brain)
+      }
+      if (!quants.includes(flags.quant)) {
+        this.log(`Your chosen brain has no such quantization level: ${flags.quant}`)
+        flags.quant = undefined
+      }
     }
 
     if (!flags.quant) {

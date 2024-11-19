@@ -61,6 +61,12 @@ export async function listBrains(userConfig: any, flags: any) {
   return result
 }
 
+export async function updateBrain(brainId: string, flags: any) {
+  const brains = ToolFunc.get(BRAINS_FUNC_NAME) as LlmModelsFunc
+  const model = await brains.$update({model: brainId, hubUrl: flags.hubUrl, verifyQuant: true })
+  return model
+}
+
 export async function searchBrains(brainDir: string, flags: any) {
   const brains = ToolFunc.get(BRAINS_FUNC_NAME) as LlmModelsFunc
   let result: AIModelSettings[]|undefined
