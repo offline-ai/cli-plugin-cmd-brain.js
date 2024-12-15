@@ -92,7 +92,7 @@ USAGE
   $ ai brain:dn [NAME] [--json] [--config <value>] [--banner] [-b <value>] [-q
     F32|F16|Q4_0|Q4_1|Q4_1_SOME_F16|Q8_0|Q5_0|Q5_1|Q2_K|Q3_K_S|Q3_K_M|Q3_K_L|Q4_K_S|Q4_K_M|Q5_K_S|Q5_K_M|Q6_K|IQ2_XXS|IQ
     2_XS|Q2_K_S|IQ3_XS|IQ3_XXS|IQ1_S|IQ4_NL|IQ3_S|IQ3_M|IQ2_S|IQ2_M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED
-    ] [-u <value>] [-d]
+    |Q4_K_L|Q3_K_XL|Q2_K_L] [-u <value>] [-d] [-r]
 
 ARGUMENTS
   NAME  the brain name to download
@@ -103,7 +103,8 @@ FLAGS
   -q, --quant=<option>    the quantization of the model, defaults to 4bit
                           <options: F32|F16|Q4_0|Q4_1|Q4_1_SOME_F16|Q8_0|Q5_0|Q5_1|Q2_K|Q3_K_S|Q3_K_M|Q3_K_L|Q4_K_S|Q4_K
                           _M|Q5_K_S|Q5_K_M|Q6_K|IQ2_XXS|IQ2_XS|Q2_K_S|IQ3_XS|IQ3_XXS|IQ1_S|IQ4_NL|IQ3_S|IQ3_M|IQ2_S|IQ2_
-                          M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED>
+                          M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED|Q4_K_L|Q3_K_XL|Q2_K_L>
+  -r, --refresh           refresh the specified brain
   -u, --hubUrl=<value>    the hub mirror url
       --[no-]banner       show banner
       --config=<value>    the config file
@@ -135,7 +136,7 @@ USAGE
   $ ai brain:down [NAME] [--json] [--config <value>] [--banner] [-b <value>] [-q
     F32|F16|Q4_0|Q4_1|Q4_1_SOME_F16|Q8_0|Q5_0|Q5_1|Q2_K|Q3_K_S|Q3_K_M|Q3_K_L|Q4_K_S|Q4_K_M|Q5_K_S|Q5_K_M|Q6_K|IQ2_XXS|IQ
     2_XS|Q2_K_S|IQ3_XS|IQ3_XXS|IQ1_S|IQ4_NL|IQ3_S|IQ3_M|IQ2_S|IQ2_M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED
-    ] [-u <value>] [-d]
+    |Q4_K_L|Q3_K_XL|Q2_K_L] [-u <value>] [-d] [-r]
 
 ARGUMENTS
   NAME  the brain name to download
@@ -146,7 +147,8 @@ FLAGS
   -q, --quant=<option>    the quantization of the model, defaults to 4bit
                           <options: F32|F16|Q4_0|Q4_1|Q4_1_SOME_F16|Q8_0|Q5_0|Q5_1|Q2_K|Q3_K_S|Q3_K_M|Q3_K_L|Q4_K_S|Q4_K
                           _M|Q5_K_S|Q5_K_M|Q6_K|IQ2_XXS|IQ2_XS|Q2_K_S|IQ3_XS|IQ3_XXS|IQ1_S|IQ4_NL|IQ3_S|IQ3_M|IQ2_S|IQ2_
-                          M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED>
+                          M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED|Q4_K_L|Q3_K_XL|Q2_K_L>
+  -r, --refresh           refresh the specified brain
   -u, --hubUrl=<value>    the hub mirror url
       --[no-]banner       show banner
       --config=<value>    the config file
@@ -178,7 +180,7 @@ USAGE
   $ ai brain:download [NAME] [--json] [--config <value>] [--banner] [-b <value>] [-q
     F32|F16|Q4_0|Q4_1|Q4_1_SOME_F16|Q8_0|Q5_0|Q5_1|Q2_K|Q3_K_S|Q3_K_M|Q3_K_L|Q4_K_S|Q4_K_M|Q5_K_S|Q5_K_M|Q6_K|IQ2_XXS|IQ
     2_XS|Q2_K_S|IQ3_XS|IQ3_XXS|IQ1_S|IQ4_NL|IQ3_S|IQ3_M|IQ2_S|IQ2_M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED
-    ] [-u <value>] [-d]
+    |Q4_K_L|Q3_K_XL|Q2_K_L] [-u <value>] [-d] [-r]
 
 ARGUMENTS
   NAME  the brain name to download
@@ -189,7 +191,8 @@ FLAGS
   -q, --quant=<option>    the quantization of the model, defaults to 4bit
                           <options: F32|F16|Q4_0|Q4_1|Q4_1_SOME_F16|Q8_0|Q5_0|Q5_1|Q2_K|Q3_K_S|Q3_K_M|Q3_K_L|Q4_K_S|Q4_K
                           _M|Q5_K_S|Q5_K_M|Q6_K|IQ2_XXS|IQ2_XS|Q2_K_S|IQ3_XS|IQ3_XXS|IQ1_S|IQ4_NL|IQ3_S|IQ3_M|IQ2_S|IQ2_
-                          M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED>
+                          M|IQ4_XS|IQ1_M|BF16|Q4_0_4_4|Q4_0_4_8|Q4_0_8_8|GUESSED|Q4_K_L|Q3_K_XL|Q2_K_L>
+  -r, --refresh           refresh the specified brain
   -u, --hubUrl=<value>    the hub mirror url
       --[no-]banner       show banner
       --config=<value>    the config file
