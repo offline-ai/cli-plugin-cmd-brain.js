@@ -1,5 +1,6 @@
 import path from 'path'
 import {
+  beforeShutdown,
   ServerTools as ToolFunc,
 } from '@isdk/ai-tool'
 import { AIModelQuantType, AIModelSettings } from '@isdk/ai-tool-llm'
@@ -16,9 +17,16 @@ export async function upgradeBrains(flags?: any) {
   let shouldBreak: boolean|undefined
   const maxCount = flags.maxCount || -1
   let count = 0
+  let saved = false
 
   brains.on('brain:refresh', onRefresh)
   process.on('SIGINT', interrupted)
+  beforeShutdown(async ()=>{
+    const now = Date.now()
+    while (!saved && Date.now() - now < 5000) {
+      await new Promise(resolve => setTimeout(resolve, 500))
+    }
+  })
 
   try {
     await brains.$refresh(flags)
@@ -29,7 +37,10 @@ export async function upgradeBrains(flags?: any) {
   } finally {
     brains.off('brain:refresh', onRefresh)
     process.off('SIGINT', interrupted)
-    if (shouldBreak) {console.log('saved.')}
+    if (shouldBreak) {
+      saved = true
+      console.log('saved.')
+    }
   }
 
   function onRefresh(tool_name: string, act: string, model: AIModelSettings, models: AIModelSettings[]|string){
