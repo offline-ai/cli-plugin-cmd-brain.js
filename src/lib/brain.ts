@@ -81,7 +81,7 @@ export async function updateBrain(brainId: string, flags: any) {
 export async function searchBrains(brainDir: string, flags: any) {
   const brains = ToolFunc.get(BRAINS_FUNC_NAME) as LlmModelsFunc
   let result: AIModelSettings[]|undefined
-  if (flags.name && flags.name.startsWith('hf://')) {
+  if (flags.name && (flags.name.startsWith('hf://') || flags.name.split('/').length === 2)) {
     const model = await brains.getModel(flags.name, flags.hubUrl)
     if (model) {result = [model]}
   } else {
