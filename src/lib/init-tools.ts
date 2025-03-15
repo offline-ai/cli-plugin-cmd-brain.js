@@ -17,13 +17,14 @@ export async function initTools(this: Hook.Context, userConfig: any, _config: Co
       ResServerTools.register(brainsFunc)
       await brainsFunc.initData()
       // brainsFunc.updateDBFromDir()
-      const latestModel = brainsFunc.getLatestModel()
-      if (latestModel) {
-        const latestDate = toDateTime(latestModel.updatedAt!)
-        if (latestDate && addDays(latestDate, 7) <= new Date()) {
-          console.log('💡 Hint: Your Brain index data has not been updated for at least one week. Run `ai brain refresh` to update the index.');
-        }
-      }
+      // const latestModel = brainsFunc.getLastUpdateModel()
+      // if (latestModel) {
+      //   const latestDate = toDateTime(latestModel.updatedAt!)
+      //   console.log('🚀 ~ file: init-tools.ts:23 ~ latestDate:', latestDate)
+      //   if (latestDate && addDays(latestDate, 7) <= new Date()) {
+      //     console.log('💡 Hint: Your Brain index data has not been updated for at least one week. Run `ai brain refresh` to update the index.');
+      //   }
+      // }
     }
   } catch (err) {
     console.error('🚀 ~ initTools brain~ err:', err)
