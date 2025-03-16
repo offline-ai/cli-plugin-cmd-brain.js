@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.4.0](https://github.com/offline-ai/cli-plugin-cmd-brain.js/compare/v0.3.33...v0.4.0) (2025-03-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* treat "repo/name" as hf repo now
+
+### Features
+
+* treat "repo/name" as hf repo now ([98747c7](https://github.com/offline-ai/cli-plugin-cmd-brain.js/commit/98747c7243304975bc2f9f1201cfa596559b0fe3))
+
+
+### Bug Fixes
+
+* not save when refreshing brain index with ctrl+c ([ad4f2bb](https://github.com/offline-ai/cli-plugin-cmd-brain.js/commit/ad4f2bb13da15ee8aee0a08dab518066eae03b29))
+
+
+### Refactor
+
+* disable refresh hint ([e92d801](https://github.com/offline-ai/cli-plugin-cmd-brain.js/commit/e92d80115b889009b10d440049be31b104a3200d))
+
 ## [0.3.33](https://github.com/offline-ai/cli-plugin-cmd-brain.js/compare/v0.3.32...v0.3.33) (2024-12-22)
 
 ## [0.3.32](https://github.com/offline-ai/cli-plugin-cmd-brain.js/compare/v0.3.31...v0.3.32) (2024-12-19)
