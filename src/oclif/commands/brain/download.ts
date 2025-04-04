@@ -83,6 +83,7 @@ export default class DownloadBrainCommand extends AICommand {
     } else {
      const info = await getBrainInfoFromConfig.call(this, userConfig, flags, args)
      brain = info.brain
+     quant = info.quant
     }
 
     const progresses: any = {}
@@ -180,7 +181,7 @@ async function getBrainInfoFromConfig(this: DownloadBrainCommand, userConfig: an
     flags.quant = quant
   }
 
-  const quant = AIModelQuantType[flags.quant]
+  const quant = AIModelQuantType[flags.quant as string] as number
 
   return {brain, quant}
 }
