@@ -76,56 +76,15 @@ export default class DownloadBrainCommand extends AICommand {
       }
       flags.name = name
     }
-    flags.onlyFeatured = false
-    flags.all = true
-    let brain: any = await listBrains(userConfig, flags)
-    if (!brain || brain.length === 0) {
-      this.log('No Such brains found')
-      return
-    } else if (brain.length > 1) {
-      const {index} = await prompt<{index: number}>({
-        type: 'autocomplete',
-        name: 'index',
-        message: 'Select the brain(LLM) to download',
-        choices: brain.map((b, index) => ({message: b.author +'/' + b.name, value: index})),
-      })
-      if (index === undefined) {
-        this.log('No brain name provided')
-        return
-      }
-      brain = brain[index]
+    let brain: any, quant: number|undefined;
+    // check the name whether is URL
+    if (flags.name.includes('://')) {
+      //
     } else {
-      brain = brain[0]
+     const info = await getBrainInfoFromConfig.call(this, userConfig, flags, args)
+     brain = info.brain
     }
 
-    let quants = getQuantsFromBrain(brain)
-    if (flags.quant && !quants.includes(flags.quant)) {
-      if (flags.refresh) {
-        this.log('Refreshing the brain...', brain._id)
-        brain = await updateBrain(brain._id, flags)
-        quants = getQuantsFromBrain(brain)
-      }
-      if (!quants.includes(flags.quant)) {
-        this.log(`Your chosen brain has no such quantization level: ${flags.quant}`)
-        flags.quant = undefined
-      }
-    }
-
-    if (!flags.quant) {
-      const {quant} = await prompt<{quant: string}>({
-        type: 'autocomplete',
-        name: 'quant',
-        message: 'Choose the quantization level for the brain compression (lossy)',
-        choices: quants,
-      })
-      if (!quant) {
-        this.log('No quantization provided')
-        return
-      }
-      flags.quant = quant
-    }
-
-    const quant = AIModelQuantType[flags.quant]
     const progresses: any = {}
     const onProgress = function(_name: string, progress: {percent:number, totalBytes:number, transferredBytes:number}, idInfo: {url: string, id?: string, filepath?: string}) {
       if (_name === 'status') {
@@ -141,10 +100,10 @@ export default class DownloadBrainCommand extends AICommand {
       const info = Object.keys(progresses).map(k => progresses[k]).join('\n')
       logUpdate(info)
     }
-    this.log(brain._id, flags.quant, 'Downloading to ' + userConfig.brainDir)
+    this.log(flags.name, flags.quant || '', 'Downloading to ' + userConfig.brainDir)
     let result: any[]
     try {
-      result = await downloadBrain(brain, {
+      result = await downloadBrain(brain || flags.name, {
         quant, onProgress, url: flags.hubUrl, dryRun: flags.dryRun,
         logLevel: userConfig.logLevel,
       })
@@ -171,4 +130,57 @@ function calcIntWidth(num: number) {
     width++
   }
   return width
+}
+
+async function getBrainInfoFromConfig(this: DownloadBrainCommand, userConfig: any, flags: any, args: any) {
+  flags.onlyFeatured = false
+  flags.all = true
+  let brain: any = await listBrains(userConfig, flags)
+
+  if (!brain || brain.length === 0) {
+    this.error('No Such brains found')
+  } else if (brain.length > 1) {
+    const {index} = await prompt<{index: number}>({
+      type: 'autocomplete',
+      name: 'index',
+      message: 'Select the brain(LLM) to download',
+      choices: brain.map((b, index) => ({message: b.author +'/' + b.name, value: index})),
+    })
+    if (index === undefined) {
+      this.error('No brain name provided')
+    }
+    brain = brain[index]
+  } else {
+    brain = brain[0]
+  }
+
+  let quants = getQuantsFromBrain(brain)
+  if (flags.quant && !quants.includes(flags.quant)) {
+    if (flags.refresh) {
+      this.log('Refreshing the brain...', brain._id)
+      brain = await updateBrain(brain._id, flags)
+      quants = getQuantsFromBrain(brain)
+    }
+    if (!quants.includes(flags.quant)) {
+      this.log(`Your chosen brain has no such quantization level: ${flags.quant}`)
+      flags.quant = undefined
+    }
+  }
+
+  if (!flags.quant) {
+    const {quant} = await prompt<{quant: string}>({
+      type: 'autocomplete',
+      name: 'quant',
+      message: 'Choose the quantization level for the brain compression (lossy)',
+      choices: quants,
+    })
+    if (!quant) {
+      this.error('No quantization provided')
+    }
+    flags.quant = quant
+  }
+
+  const quant = AIModelQuantType[flags.quant]
+
+  return {brain, quant}
 }

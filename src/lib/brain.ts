@@ -143,8 +143,8 @@ export function getQuantsFromBrain(brain: AIModelSettings) {
   return getFileInfo(brain).map(item => item.quant)
 }
 
-export async function downloadBrain(brain: AIModelSettings, options: {
-  quant: number, url?: string, dryRun?: boolean, onStatus?: Function, onProgress?: Function,
+export async function downloadBrain(brain: AIModelSettings|string, options: {
+  quant?: number, url?: string, dryRun?: boolean, onStatus?: Function, onProgress?: Function,
   logLevel?: string,
 }) {
   const quant = options.quant
@@ -154,12 +154,12 @@ export async function downloadBrain(brain: AIModelSettings, options: {
 
   if (typeof onProgress === 'function') {
     brains.on('model:'+DownloadStatusEventName, (_name: string, status: string, info: any) => {
-      if (info.old === info.quant) {delete info.old}
+      if (info.old && info.old === info.quant) {delete info.old}
       onProgress('status', status, info)
     })
   }
 
-  let downTasks = await brains.$download({id: brain._id, quant, url: options.url, dryRun})
+  let downTasks = typeof brain === 'string' ? await brains.$downloadUrl({url: brain, dryRun}) : await brains.$download({id: brain._id, quant, url: options.url, dryRun})
   if (downTasks) {
     if (!Array.isArray(downTasks)) {downTasks = [downTasks]}
     downTasks = downTasks.filter(Boolean)
